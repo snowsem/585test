@@ -86,7 +86,7 @@ $tbl->setHeaders(
 
 foreach ($array as $item) {
     $pp_format = $item['%%'];
-    if ($item['%%']>1) $pp_format = $pp_format.' ('.$item['count_%%'].')';
+    if ($item['%%']>1) $pp_format = round($pp_format/$item['count_%%'], 2).' ('.$item['count_%%'].')';
     $tbl->addRow(array($item['ДАТА'], $item['КБК'], $item['Адрес'], $pp_format));
 }
 echo $tbl->getTable();
